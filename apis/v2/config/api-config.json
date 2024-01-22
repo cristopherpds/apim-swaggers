@@ -1,0 +1,42 @@
+{
+  "name" : "Petstore 2.0",
+  "path" : "/v2",
+  "state" : "unpublished",
+  "version" : "1.0.6",
+  "organization" : "API Development",
+  "apiDefinition": "../swagger/Petstore 2.0.json",
+  "backendBasepath" : "https://petstore.swagger.io",
+  "inboundProfiles" : {
+    "_default" : {
+      "monitorAPI" : true,
+      "queryStringPassThrough" : false,
+      "monitorSubject" : "authentication.subject.id",
+      "securityProfile" : "_default",
+      "corsProfile" : "_default"
+    }
+  },
+  "caCerts" : [ {
+    "certFile" : "swagger.io.crt",
+    "inbound" : "false",
+    "outbound" : "true"
+  }, {
+    "certFile" : "AmazonRSA2048M02.crt",
+    "inbound" : "false",
+    "outbound" : "true"
+  }, {
+    "certFile" : "AmazonRootCA1.crt",
+    "inbound" : "false",
+    "outbound" : "true"
+  }, {
+    "certFile" : "StarfieldServicesRootCertificateAuthority-G2.crt",
+    "inbound" : "false",
+    "outbound" : "true"
+  } ],
+  "applications" : [ {
+    "name" : "PetStore",
+    "enabled" : true,
+    "state" : "approved",
+    "permissions" : [ ],
+    "appScopes" : [ ]
+  } ]
+}
