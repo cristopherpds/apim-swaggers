@@ -26,7 +26,7 @@ pipeline {
                             echo api_config_path
 
                             // Importar a API no API Manager
-                            sh "apim.sh api import -c ${api_config_path} -s teste"
+                            apim.sh api import -c ${api_config_path} -s teste
                         }
                     } else {
                         echo "No modified swagger files found."
