@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Definir o caminho do repositório
-                    def REPOSITORY_PATH = "/var/lib/jenkins/workspace/${env.JOB_NAME}/policies-gke"
+                    def REPOSITORY_PATH = "/var/lib/jenkins/workspace/${env.JOB_NAME}/swaggers"
 
                     // Verificar se existem arquivos swagger modificados
                     def modified = sh(script: "git diff --name-only HEAD HEAD~1 | grep swagger", returnStdout: true).trim()
@@ -26,7 +26,7 @@ pipeline {
                             echo api_config_path
 
                             // Importar a API no API Manager
-                            sh "/home/admin/apim-cli-1.14.0/scripts/apim.sh api import -c ${api_config_path} -s prod"
+                            sh "/home/admin/apim-cli-1.14.0/scripts/apim.sh api import -c ${api_config_path} -s teste"
                         }
                     } else {
                         echo "No modified swagger files found."
