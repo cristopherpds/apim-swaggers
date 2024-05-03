@@ -26,7 +26,7 @@ pipeline {
                             echo api_config_path
 
                             // Importar a API no API Manager
-                            /c/Axway/Tools/axway-apimcli-1.14.1/apim-cli-1.14.1/scripts/apim.sh api import -c ${api_config_path} -s teste
+                            sh "apim.sh api import -c ${api_config_path} -s teste"
                         }
                     } else {
                         echo "No modified swagger files found."
